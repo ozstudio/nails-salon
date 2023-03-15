@@ -3,8 +3,9 @@ import { GlobalStyles } from "../../assets/constants/styles";
 
 
 function ExpensesSummary({expenses,periodName}){
+
 const expensesSum = expenses.reduce((sum,expenses)=>{
-return sum + expenses.amount
+return sum + expenses.amount;
 },0)
 
 

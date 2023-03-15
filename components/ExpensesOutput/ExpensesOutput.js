@@ -3,48 +3,37 @@ import { GlobalStyles } from "../../assets/constants/styles";
 import ExpensesList from "./ExpemsesList";
 import ExpensesSummary from "./ExpensesSummary";
 
-const Dummy_Data = [
-    {
-        id:'e1',
-        description:'A pair of shoes',
-        amount:59.99,
-        date:new Date('2021-12-19')
-    },
-    {
-        id:'e2',
-        description:'food',
-        amount:99,
-        date:new Date('2022-12-19')
-    },
-    {
-        id:'e3',
-        description:'shirt',
-        amount:5.9,
-        date:new Date('2021-01-19')
-    },
-    {
-        id:'e4',
-        description:'cell phone',
-        amount:9.99,
-        date:new Date('2021-06-19')
-    }
-]
 
-function ExpensesOutput({expenses,expensesPeriod}) {
-    return (<View style={style.container}>
+function ExpensesOutput({expenses,expensesPeriod,fallbackText}) {
+let content = <Text style ={styles.infoText}>
+    {fallbackText}
+</Text>
+
+if (expenses.length > 0) {
+    content = <ExpensesList expenses={expenses}/>
+}
+
+    return (<View style={styles.container}>
       <ExpensesSummary
-      expenses ={Dummy_Data}
+      expenses ={expenses}
       periodName={expensesPeriod}/>
-      <ExpensesList expenses ={Dummy_Data}/>
+      {content}
     </View>)
     
 }
 
 export default ExpensesOutput;
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     container:{
         flex:1,
         padding:24,
         backgroundColor:GlobalStyles.colors.primary700
+    },
+    infoText:{
+        color:'white',
+        fontSize:16,
+        textAlign:'center',
+        marginTop:32
+
     }
 });
