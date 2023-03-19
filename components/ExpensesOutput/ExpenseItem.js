@@ -20,6 +20,7 @@ function ExpenseItem({id,description,amount,date}) {
     onPress ={expensePressHandler}
     style ={({pressed})=>pressed && styles.pressed}>
         <View style = {styles.expenseItem}>
+         
           <View>
             <Text style ={[styles.textBase,styles.description]}>{description}</Text>
             <Text style ={styles.textBase}>{GetFormattedDate(date)}</Text>

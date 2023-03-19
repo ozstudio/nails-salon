@@ -2,7 +2,7 @@ import { useState } from "react";
 import { StyleSheet, TextInput, View,Text,Alert } from "react-native";
 import Input from "./Input";
 import Button from "../UI/Button";
-import { GlobalStyles } from "../../assets/constants/styles";
+//import { GlobalStyles } from "../../assets/constants/styles";
 
 function ExpenseForm({
     submitButtonLabel,
@@ -152,7 +152,7 @@ export default ExpenseForm;
 const styles = StyleSheet.create({
     errorText:{
         textAlign:'center',
-        color:GlobalStyles.colors.error500,
+     //   color:GlobalStyles.colors.error500,
         margin:8
     },
     buttonsContainer:{

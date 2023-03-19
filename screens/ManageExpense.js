@@ -1,7 +1,7 @@
 import { useContext, useLayoutEffect } from 'react';
 import {View,Text, StyleSheet} from 'react-native';
 import IconButton from '../components/UI/IconButton';
-import { GlobalStyles } from '../../ExpenseApp/assets/constants/styles';
+//import { GlobalStyles } from '../../ExpenseApp/assets/constants/styles';
 import Button from '../components/UI/Button';
 import { ExpensesContext } from '../assets/store/expenses-context';
 import ExpenseForm from '../components/Manageexpense/ExpenseForm';
@@ -59,7 +59,7 @@ function ManageExpense({route,navigation}) {
        {isEditing && (<View
        style = {styles.deleteContainer}><IconButton 
        icon ='trash'
-       color ={GlobalStyles.colors.error500}
+      // color ={GlobalStyles.colors.error500}
        size = {36}
        onPress ={deleteExpenseHandler}
        /></View>)}
@@ -70,7 +70,7 @@ const styles =StyleSheet.create({
     container :{
         flex:1,
         padding:24,
-        backgroundColor:GlobalStyles.colors.primary800
+      //  backgroundColor:GlobalStyles.colors.primary800
     },
    
     deleteContainer:{
